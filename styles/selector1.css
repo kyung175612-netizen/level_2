@@ -1,0 +1,33 @@
+/* 선택자 {속성:값;} */
+main > h1 {
+    background-color: brown;/* 배경색 */
+    color: #fff; /* 글자색상 */ 
+    font-family:'pretendard', 'Noto serif', '마루 부리', '궁서';
+    /* font-family: '궁서'; */
+    /* 글꿀명이 공백 또는 한글일땐 따옴표 묶기 */
+    /* 글꼴명 2개 이상 작성하기(대표글꼴, 후보글꼴) */
+    /* 맑은 고딕, 궁서, 바탕. 굴림 등 컴퓨터 기본글꼴 외 설치글꼴은 웹주소로 따로 연결해야 한다. */
+}
+main > p {
+    font-family: 'Noto serif', '마루 부리', '궁서';
+    background-color: coral;
+    color: mediumblue;
+}
+main > .news {
+    background-color: darkgoldenrod;
+}
+main > .news > li {
+    color: #0cf;
+    font-size: 0.75em;/* 웹 기본크기 16px(통일) */
+}
+main > .news > .news_list {
+    font-size: 1.563em;
+}
+main > #blog {background-color: #eee;}
+main > #blog > h2 {
+    font-size: 1em;
+}
+main > #blog > p {
+    background-color: gold;
+}
+main > #blog > h2+p {font-size: 0.625em;}
