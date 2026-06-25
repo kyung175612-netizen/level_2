@@ -1,0 +1,41 @@
+/* properties02.css */
+.movie2 {
+    width: 500px;
+    height: 700px;
+    background-color: #FBFFBC;
+    border: 1px solid #000;
+    border-radius: 25px;
+    padding: 20px 20px 20px 20px;
+}
+.movie2 > h1 {
+    font-family: 'Noto Sans KR', '맑은 고딕';
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1.7;
+    margin: 0 0 20px 0;
+}
+.movie2 > .contents {
+    margin: 0 0 20px 0;
+}
+.movie2 > .contents > .title {
+    font-family: 'Noto Sans KR', '맑은 고딕';
+    font-weight: 500;
+    font-size: 1.125em;
+    line-height: 1.7;
+    margin: 0 0 5px 0;
+}
+.movie2 > .contents > .title_2 {
+    font-family: 'Noto Sans KR', '맑은 고딕';
+    font-weight: 400;
+    line-height: 1.7;
+    margin: 0 0 20px 0;
+}
+.movie2 > .poster {
+    margin: 0 0 20px 0;
+}
+.movie2 > .poster > img {}
+.movie2 > .story {
+    font-family: 'Noto Sans KR', '맑은 고딕';
+    font-weight: 400;
+    line-height: 1.7;
+}
