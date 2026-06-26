@@ -1,0 +1,143 @@
+/* inline_block.css */
+body {background-color: cadetblue; height: 200vh;}
+/* vh == viewport height 약자 : 사용자가 보는 화면 상대적 높이 값 */
+#muji {
+    width: 402px;
+    height: max-content;
+    border: solid 1px; color: #000;
+    background-color: #fff;
+}
+#muji > .ad {
+    background-image: url(../images/muji_ad_bg.jpg);
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-color: cadetblue;/* 배경 색상은 항상 배경 이미지 아래로 깔림 */
+    background-position: left top;/* x y 순서로 작성 */
+    background-attachment: fixed;
+    /* ./ 경로 의미 : 현재 작성 파일 위치에서부터 경로를 시작한다. */
+    /* ../ 경로 의미 : 현재 작성 위치에서 한번 위로 나가서 경로를 시작한다. */
+    width: 100%; /* 피그마에서 w 채우기 설정 시(부모와 너비 같음) */
+    /* max-content는 100%와 다름. max-content는 자식의 최대크기와 같다는 뜻. */
+    height: 500px; /* 피그마에서 h 고정값 직접입력 시(px 고정) */
+}
+#muji > .ad > h2 {
+    font-family: 'pretendard', sans-serif;
+    font-size: 1.25em;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: #000;
+}
+#muji > .ad > h2+p {
+    font-family: 'pretendard', sans-serif;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+}
+#muji > .ad > .ad_num {
+    background-color: rgba(0, 0, 0, 0.5);/* 100%=1. 50%=0.5 */
+    color: #fff;
+    width: 60px; line-height: 25px;
+    /* 수직정렬 line-height, align-itmes */
+    /*  line-height 행간(글자가 1-2줄 이상일때), (고정 높이<height: 25px>가 있는 수직 중앙 정렬) */
+    border-radius: 20px;
+    font-family: 'pretendard', sans-serif;
+    letter-spacing: -0.02em;
+    font-size:600;
+    /* 수평정렬 text-align */
+    text-align: center;
+}
+#muji > .ad > .ad_num > .current {
+    color: #fff;
+    font-family: 'pretendard', sans-serif;
+    letter-spacing: -0.02em;
+    font-size:600;
+}
+#muji > .ad > .ad_num > .total {
+    color: #fff;
+    font-family: 'pretendard', sans-serif;
+    letter-spacing: -0.02em;
+    font-size:600;
+}
+/* -------------------------------------------------------> */
+#muji > .menu_g {
+    display:flex;
+    /* flex 설정을 정렬하고 싶은 자식의 부모에게 명령하면 자식들이 옆으로 가는 효과 */
+    padding:16px
+}
+#muji > .menu_g > .menu {
+    background-color: #fff;
+    /* display:inline-block; */
+    display: flex; align-items: center;
+    width: max-content;
+    margin: 0 12px 0 0;/* menu와 menu 형제 사이 */
+    padding: 6px 12px 6px 6px; /* menu(부모)와 자식(thum, h3)사이 */
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    font-family: 'pretendard', '맑은 고딕';
+    font-size: 0.75em;
+    letter-spacing: -0.02em;
+    align-items: center;
+}
+#muji > .menu_g > .menu > .thum {
+    width: 20px; height: 20px; border-radius: 10px;
+    /* 피그마의 넘친 콘텐츠 숨기기(부모 안에서 자식이 벗어났을 때, 부모 안에서만 보이기) */
+    overflow:hidden;
+    /* .thum클래스를 가진 p와 형제 h3가 블록 태그이기 때문에 수직으로 나열됨. 그 문제를 해결하기 위해 크기와 여백을 인식하고 옆으로 정렬하눈 inline-block 적용 */
+    display: inline-block;
+    margin: 0 8px 0 0
+}
+#muji > .menu_g > .menu > .thum > img {width: 100%;}
+#muji > .menu_g > .menu > h3 {
+    display: inline-block
+}
+/* ------------------------------------------------------------muji_v2 연습용 */
+#muji_v2 {
+    width: 402px;
+    height: 874px;
+    border: solid 1px; color: #000;
+    background-color: #fff;
+}
+#muji_v2 > .ad {
+    background-image: url(../images/muji_ad_bg2.jpg);
+    background-size: 155%;
+    background-repeat: no-repeat;
+    background-position: 100% 62%;
+    width: 100%;
+    height: 500px;
+}
+#muji_v2 > .ad > h2 {
+    font-family: 'pretendard', sans-serif;
+    font-size: 1.25em;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+/* -------------------------------------------------------> */
+#muji_v2 > .menu_wrap {
+    padding:10px 10px 10px 10px;
+    display: flex;
+}
+#muji_v2 > .menu_wrap > .menu_3 {
+    padding: 6px 12px 6px 6px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    margin:0 10px 0 0;
+}
+#muji_v2 > .menu_wrap > .menu_3 > .img {
+    width: 20px; height: 20px; border-radius: 50px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+#muji_v2 > .menu_wrap > .menu_3 > .img > img {width: 100%;}
+#muji_v2 > .menu_wrap > .menu_3 > h3 {
+    font-size: 0.75em;
+    font-family: 'pretendard', '맑은 고딕';
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+    display:inline-block;
+}
