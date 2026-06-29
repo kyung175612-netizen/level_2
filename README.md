@@ -59,4 +59,28 @@
 ## layout
 ### 수평, 수직 정렬하기
 * `text-align` : 수평 정렬(left, center, right, justify)
-* `line-height` : 글자가 한 줄이고 높이가 고정되어 있을 떄, 높이값 px 를 넣어 수직 중앙 정렬 설정
+* `line-height` : 글자가 한 줄이고 높이가 고정되어 있을 떄, 높이값 px 를 넣어 수직 
+### flex 레이아웃 속성
+#### 적용방법
+1. 정렳하고자 하는 부모, 자식 대상을 확인한다.
+2. 2개 이상의 자식 요소가 수평, 수직 어느 방향으로 정렬되었는지 확인한다.
+3. 부모 요소에게 `display:flex` 속성을 먼저 적용한다.
+4. 메인축 정렬, 굦차죽 정렬 속성을 활용하여 마무리를 진행한다.
+#### 주요 속성과 주의 사항, 팁
+* `display:flex` : 정렬 자식들의 부모에게 설정하는 flex 시작 값(필수)
+* `flex-flow:방향 줄바꿈` : 메인축의 방향과 줄바꿈을 설정하는 묶음 값(필수)
+* `justify-content:메인축 정렬 값`
+    * flex-flow에서 설정된 메인축 방향에 따라 정렬을 정하는 속성
+    * **메인축 row인 경우** : 위, 가운데, 오른쪽, 양쪽 끝, 균등여백
+    * **메인축 column인 경우** : 위, 가운데, 아래, 양쪽 끝, 균등여백
+    * 왼쪽, 위(flex-start):가운데(center),오른쪽, 아래(flex-end)
+    * 양쪽 끝(space-between), 균등여백(space-around)
+* `align-content:교차축 2줄 이상 정렬값`, `align-itmes:교차축 1줄 정렬 값`
+    * flex-flow의 값이 `nowrap` 이면 -> `align=items`
+    * flex-flow의 값이 `wrap`이고 교차축이 2줄 이상이면 -> `align-content`
+    * **align-content만 space-between, space-around 값 사용가능**
+    * `flex-end, flex-start, center`는 **align-content, items 모두 사용 가능**
+    * `flex-flow:row-nowrap: align-items:flex-end;`
+        * 해석) 메인축이 수평, 자식을 줄바꿈 안함, 교차죽 수직, 교차축 방향으로 아래쪽으로 자식 배치
+    * `flex-flow:column-wrap; align-content:center;`
+        * 해석) 메인축이 수직, 줄바꿈 함, 교차축 수평, 교차축 방향으로 2줄 이상 올 때 가운데 정렬
